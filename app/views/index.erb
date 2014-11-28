@@ -1,0 +1,40 @@
+<div class="container">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <h1>Khitly</h1>
+
+  <div class="form">
+    <form action="/urls" method="post">
+      <input type="text" class="resizedTextbox" name="address">
+      <input type="submit" value="Shortify!">
+    </form>
+  </div>
+</div>
+
+
+<div class="content">
+  <div class="row">
+    <div class="col-1">
+    </div>
+    <div class="col-10">
+      <br><br>
+
+
+      <table>
+        <tr>
+          <td width="25%"><b>Short URL</td>
+          <td width="60%"><b>Full Address</td>
+          <td width="25%"><b>Click Count</td>
+        </tr>
+        <%Url.all.each do |u|%>
+        <tr>
+          <td><a href="/<%=u.shortened_url%>">kitly.com/<%=u.shortened_url%><a></td>
+          <td><%=u.full_url%></td>
+          <td><%=u.click_count%></td>
+        </tr>
+        <%end%>
+      </table>
+    </div>
+    <div class="col-1">
+    </div>
+  </div>
+</div>
